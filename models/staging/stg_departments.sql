@@ -1,0 +1,1 @@
+select * from raw.walmart_sales.departments

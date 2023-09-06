@@ -1,1 +1,1 @@
-select * from raw.walmart_sales.conditions
+select * from raw.walmart_sales.conditions;

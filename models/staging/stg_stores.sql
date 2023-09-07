@@ -6,4 +6,4 @@ select
             WHEN type = 'C' THEN 'small'
         END AS type,
     size as size
-from raw.walmart_sales.stores
+from {{ source('walmart_sales','stores')}}

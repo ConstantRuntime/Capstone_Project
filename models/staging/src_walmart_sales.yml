@@ -1,0 +1,58 @@
+version: 2
+
+sources:
+  - name: walmart_sales
+    database: raw
+    schema: walmart_sales
+    tables:
+      - name: conditions
+      - name: departments
+      - name: stores
+
+models:
+  - name: stg_conditions
+    columns:
+      - name: store_id
+        # tests:
+        #   - unique
+      - name: date
+        # description: The unique indetifier of the order that was associated with the payment.
+      - name: temperature
+        # description: The payment method associated with the order
+      - name: fuel_price
+        # description : "{{ doc('payments_status') }}"
+      - name: mark_down_1
+
+      - name: mark_down_2
+
+      - name: mark_down_3
+
+      - name: mark_down_4
+
+      - name: mark_down_5
+
+      - name: cpi
+
+      - name: unemployment
+
+      - name: is_holiday
+  - name: stg_departments
+    columns:
+      - name: dept_id
+
+      - name: store_id
+
+      - name: is_holiday
+
+      - name: weekly_sales
+
+      - name: date
+
+      - name: dept_name'
+  - name: stg_stores
+    columns:
+      - name: store_id
+
+      - name: type
+
+      - name: size

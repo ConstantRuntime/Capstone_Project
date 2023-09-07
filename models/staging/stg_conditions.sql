@@ -1,6 +1,3 @@
-<<<<<<< HEAD
-select * from raw.walmart_sales.conditions;
-=======
 SELECT 
     store as store_id,
     date,
@@ -15,4 +12,3 @@ SELECT
     unemployment,
     is_holiday
 FROM raw.walmart_sales.conditions
->>>>>>> c3d2f44fa4201632ff32f7dc8ee4ba52007d43de

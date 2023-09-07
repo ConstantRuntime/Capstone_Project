@@ -17,4 +17,4 @@ SELECT
             WHEN DEPT_ID = 8.0 THEN 'Pets & Supplies'
             WHEN DEPT_ID = 9.0 THEN 'Sporting Goods'
         END AS dept_name
-FROM raw.walmart_sales.departments
+FROM {{ source('walmart_sales','departments')}}

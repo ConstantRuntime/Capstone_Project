@@ -3,12 +3,27 @@ SELECT
     date,
     temperature,
     fuel_price,
-    mark_down_1,
-    mark_down_2,
-    mark_down_3,
-    mark_down_4,
-    mark_down_5,
+        CASE   
+            WHEN mark_down_1 = 'NA' THEN NULL
+            ELSE mark_down_1
+        END AS mark_down_1,
+        CASE   
+            WHEN mark_down_2 = 'NA' THEN NULL
+            ELSE mark_down_2
+        END AS mark_down_2,
+        CASE   
+            WHEN mark_down_3 = 'NA' THEN NULL
+            ELSE mark_down_3
+        END AS mark_down_3,
+        CASE   
+            WHEN mark_down_4 = 'NA' THEN NULL
+            ELSE mark_down_4
+        END AS mark_down_4,
+        CASE   
+            WHEN mark_down_5 = 'NA' THEN NULL
+            ELSE mark_down_5
+        END AS mark_down_5,
     cpi,
     unemployment,
     is_holiday
-FROM raw.walmart_sales.conditions
+FROM {{ source('walmart_sales','conditions')}}

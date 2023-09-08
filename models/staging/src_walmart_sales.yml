@@ -60,10 +60,13 @@ models:
         tests:
                 - unique
 
+      - name: weekly_sales
+
+      - name: date
+
       - name: type
         tests:
               - accepted_values:
                       values: ['big','medium','small']
 
       - name: size
-                      

@@ -70,7 +70,3 @@ models:
                       values: ['big','medium','small']
 
       - name: size
-<<<<<<< HEAD
-=======
-                      
->>>>>>> 7a476e8d4a671ea288af068e187be45639342af6

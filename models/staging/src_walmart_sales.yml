@@ -53,6 +53,10 @@ models:
     columns:
       - name: store_id
 
+      - name: weekly_sales
+
+      - name: date
+
       - name: type
 
       - name: size

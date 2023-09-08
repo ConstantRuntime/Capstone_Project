@@ -13,8 +13,8 @@ models:
   - name: stg_conditions
     columns:
       - name: store_id
-        # tests:
-        #   - unique
+        tests:
+          - unique
       - name: date
         # description: The unique indetifier of the order that was associated with the payment.
       - name: temperature
@@ -43,16 +43,27 @@ models:
       - name: store_id
 
       - name: is_holiday
+        tests:
+              - accepted_values:
+                      values: [TRUE, FALSE]
 
       - name: weekly_sales
+        tests:
+              - not_null
 
       - name: date
 
-      - name: dept_name'
+      - name: dept_name
   - name: stg_stores
     columns:
       - name: store_id
+        tests:
+                - unique
 
       - name: type
+        tests:
+              - accepted_values:
+                      values: ['big','medium','small']
 
       - name: size
+                      

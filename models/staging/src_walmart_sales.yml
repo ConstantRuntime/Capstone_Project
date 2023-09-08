@@ -13,60 +13,76 @@ models:
   - name: stg_conditions
     columns:
       - name: store_id
-        tests:
-          - unique
+        description: Multiple occurrences for foregin key allowed due to primary key on 'date'
+
       - name: date
-        # description: The unique indetifier of the order that was associated with the payment.
+        description: Primary key, week interval
+
       - name: temperature
-        # description: The payment method associated with the order
+        description: Average temperature in the region
+
       - name: fuel_price
-        # description : "{{ doc('payments_status') }}"
+        description : Cost of fuel in the region
+
       - name: mark_down_1
+        description: Anonymized data related to promotional markdowns that Walmart is running.
 
       - name: mark_down_2
+        description: Anonymized data related to promotional markdowns that Walmart is running.
 
       - name: mark_down_3
-
+        description: Anonymized data related to promotional markdowns that Walmart is running.
       - name: mark_down_4
+        description: Anonymized data related to promotional markdowns that Walmart is running.
 
       - name: mark_down_5
+        description: Anonymized data related to promotional markdowns that Walmart is running.
 
       - name: cpi
+        description: The consumer price index
 
       - name: unemployment
+        description: The unemployment rate
 
       - name: is_holiday
+        description: Whether the week is a special holiday week
+
   - name: stg_departments
     columns:
       - name: dept_id
+        description: Primary key
 
       - name: store_id
+        description: Foreign key, Multiple occurrences for foregin key allowed due to primary key on 'dept_id'
 
       - name: is_holiday
+        description: Whether the week is a special holiday week
         tests:
               - accepted_values:
                       values: [TRUE, FALSE]
 
       - name: weekly_sales
+        description: Sales for the given department in the given store
         tests:
               - not_null
 
       - name: date
+        description: The week
 
       - name: dept_name
+        description: Name for the department based on dept_id
   - name: stg_stores
     columns:
       - name: store_id
+        description: Stores numbered from 1 to 45
         tests:
                 - unique
 
-      - name: weekly_sales
-
-      - name: date
-
       - name: type
+        description: Store type has been provided, there are 3 types — A, B and C. Types are based on size, A being the biggest
         tests:
               - accepted_values:
                       values: ['big','medium','small']
 
       - name: size
+        description: Stores size has provided

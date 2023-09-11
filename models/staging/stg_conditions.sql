@@ -23,7 +23,13 @@ SELECT
             WHEN mark_down_5 = 'NA' THEN NULL
             ELSE mark_down_5
         END AS mark_down_5,
-    cpi,
-    unemployment,
+    CASE 
+        WHEN cpi = 'NA' THEN NULL 
+        ELSE CAST(cpi AS NUMBER)
+    END AS cpi,
+    CASE 
+        WHEN unemployment = 'NA' THEN NULL 
+        ELSE CAST(unemployment AS NUMBER)
+    END AS unemployment,
     is_holiday
 FROM {{ source('walmart_sales','conditions')}}

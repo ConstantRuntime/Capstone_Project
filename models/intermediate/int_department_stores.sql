@@ -11,7 +11,7 @@ final as (
         dept_id,
         stores.store_id,
         departments.is_holiday,
-        weekly_sales,
+        departments.weekly_sales,
         departments.date,
         dept_name,
         type,

@@ -4,9 +4,10 @@ with department_stores as (
 
 select 
     store_id,
-    is_holiday 
     weekly_sales,
     date,
     type,
-    size
+    size,
+    is_holiday 
+    
 from department_stores
